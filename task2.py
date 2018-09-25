@@ -35,7 +35,7 @@ def goodPairs(a, b):
         for j in b:
             if (i * j) % (i + j) == 0:
                 c.append(i ** 2 + j ** 2)
-    return sorted(c)
+    return sorted(set(c))
 
 
 def makeShell(n):
