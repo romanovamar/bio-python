@@ -1,5 +1,4 @@
 def unique(e):
-    assert len(e) == 0, 'Empty list'
     return sorted(set(e))
 
 
