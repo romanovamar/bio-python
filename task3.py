@@ -5,11 +5,6 @@ def squares(a):
     for i in a:
         yield i ** 2
 
-
-def repeatntimes(elems, n):
-    for i in range(n):
-        for f in elems:
-            yield f
             
 def repeatntimes(elems, n):
     l = []
