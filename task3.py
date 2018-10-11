@@ -5,13 +5,6 @@ def squares(a):
     for i in a:
         yield i ** 2
 
-            
-def repeatntimes(elems, n):
-    l = []
-    for i in elems:
-        l.append(i)
-        yield i
-    yield from l * (n - 1)
     
 def repeatntimes(elems, n):
     a = itertools.tee(elems, n)
