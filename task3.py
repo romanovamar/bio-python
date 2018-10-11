@@ -12,7 +12,11 @@ def repeatntimes(elems, n):
         l.append(i)
         yield i
     yield from l * (n - 1)
-
+    
+def repeatntimes(elems, n):
+    a = itertools.tee(elems, n)
+    for i in a:
+        yield from i
 
 def evens(x):
     even = x if x % 2 == 0 else x + 1
