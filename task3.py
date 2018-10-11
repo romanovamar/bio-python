@@ -10,6 +10,13 @@ def repeatntimes(elems, n):
     for i in range(n):
         for f in elems:
             yield f
+            
+def repeatntimes(elems, n):
+    l = []
+    for i in elems:
+        l.append(i)
+        yield i
+    yield from l * (n - 1)
 
 
 def evens(x):
