@@ -32,3 +32,12 @@ def ackermann(m, n):
     if n == 0 and m > 0:
         return ackermann(m - 1, 1)
     return ackermann(m - 1, ackermann(m, n - 1))
+
+
+def recurrent(n):
+    if n < 2:
+        return n
+    elif n % 2 == 0:
+        return int(recurrent(n / 2))
+    else:
+        return int(recurrent((n - 1) / 2 + 1) + recurrent((n - 1) / 2))
