@@ -1,5 +1,5 @@
 from functools import reduce
-
+from itertools import tee
 
 def squares(a):
     for i in a:
@@ -7,7 +7,7 @@ def squares(a):
 
     
 def repeatntimes(elems, n):
-    a = itertools.tee(elems, n)
+    a = tee(elems, n)
     for i in a:
         yield from i
 
