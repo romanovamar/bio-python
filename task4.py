@@ -41,3 +41,14 @@ def recurrent(n):
         return int(recurrent(n / 2))
     else:
         return int(recurrent((n - 1) / 2 + 1) + recurrent((n - 1) / 2))
+    
+ 
+def istwopower(n):
+    if n==1:
+        return True
+    elif n <=0:
+        return False
+    elif n % 2 == 0:
+        return istwopower(n//2)
+    else:
+        return False
