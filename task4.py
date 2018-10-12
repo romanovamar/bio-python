@@ -44,11 +44,11 @@ def recurrent(n):
     
  
 def istwopower(n):
-    if n==1:
+    if n == 1:
         return True
-    elif n <=0:
+    elif n <= 0:
         return False
     elif n % 2 == 0:
-        return istwopower(n//2)
+        return istwopower(n // 2)
     else:
         return False
