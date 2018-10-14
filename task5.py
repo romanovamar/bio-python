@@ -1,4 +1,6 @@
 def permutations(n):
+    
+    
     def generator(n, prefix=[]):
         if len(prefix) == n:
             yield tuple(prefix)
@@ -10,6 +12,8 @@ def permutations(n):
 
 
 def correctbracketsequences(n):
+    
+    
     def gen(s, debt):
         variants = []
         if len(s) == n * 2:
