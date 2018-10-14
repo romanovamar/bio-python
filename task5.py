@@ -27,13 +27,4 @@ def correctbracketsequences(n):
     return gen('(', 1)
 
 
-print(correctbracketsequences(3))
 
-
-def correct(n):
-    def gen(i, j):
-        brackets = ['(']
-        if len(i) == 2 * n:
-            return brackets
-        for f in ['(', ')']:
-            if
