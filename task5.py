@@ -31,4 +31,17 @@ def correctbracketsequences(n):
     return gen('(', 1)
 
 
+def combinationswithrepeats(n, k):
+    p = 1
+
+    def gen_comb(n, k, p, prefix=[]):
+        if len(prefix) == k:
+            yield tuple(prefix)
+        for i in range(p, n + 1):
+            if len(prefix) <= k:
+                yield from gen_comb(n, k, p, prefix + [i])
+            p += 1
+
+    return list(gen_comb(n, k, p))
+
 
