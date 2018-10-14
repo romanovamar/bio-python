@@ -1,6 +1,4 @@
-def permutations(n):
-    
-    
+def permutations(n):  
     def generator(n, prefix=[]):
         if len(prefix) == n:
             yield tuple(prefix)
@@ -12,8 +10,6 @@ def permutations(n):
 
 
 def correctbracketsequences(n):
-    
-    
     def gen(s, debt):
         variants = []
         if len(s) == n * 2:
@@ -31,9 +27,7 @@ def correctbracketsequences(n):
     return gen('(', 1)
 
 
-def combinationswithrepeats(n, k):
-    p = 1
-
+def combinationswithrepeats(n, k, p=1):
     def gen_comb(n, k, p, prefix=[]):
         if len(prefix) == k:
             yield tuple(prefix)
@@ -43,5 +37,17 @@ def combinationswithrepeats(n, k):
             p += 1
 
     return list(gen_comb(n, k, p))
+
+
+def partitions(n, f=1):
+    def gen(n, f, prefix=[]):
+        if sum(prefix) == n:
+            yield tuple(prefix)
+        for i in range(f, n + 1):
+            if len(prefix) <= n:
+                yield from gen(n, f, prefix + [i])
+            f += 1
+
+    return list(gen(n, f))
 
 
