@@ -29,6 +29,7 @@ def correctbracketsequences(n):
 
 def combinationswithrepeats(n, k):
     p=1
+    
     def gen_comb(n, k, p, prefix=[]):
         if len(prefix) == k:
             yield tuple(prefix)
@@ -39,8 +40,10 @@ def combinationswithrepeats(n, k):
 
     return list(gen_comb(n, k, p))
 
+
 def unorderedpartitions(n):
     f = 1
+    
     def gen(n, f, prefix=[]):
         if sum(prefix) == n:
             yield tuple(prefix)
