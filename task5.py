@@ -39,14 +39,14 @@ def combinationswithrepeats(n, k):
 
     return list(gen_comb(n, k, p))
 
-
 def unorderedpartitions(n):
-    f=1
+    f = 1
     def gen(n, f, prefix=[]):
         if sum(prefix) == n:
             yield tuple(prefix)
+            return
         for i in range(f, n + 1):
-            if len(prefix) <= n:
+            if sum(prefix + [i]) <= n:
                 yield from gen(n, f, prefix + [i])
             f += 1
 
