@@ -52,3 +52,12 @@ def istwopower(n):
         return istwopower(n // 2)
     else:
         return False
+    
+
+def gcd(a, b):
+    if a % b == 0 or b % a == 0:
+        return min(a, b)
+    return gcd(min(a, b), max(a, b) % min(a, b))
+
+
+
