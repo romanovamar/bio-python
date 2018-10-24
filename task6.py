@@ -35,3 +35,7 @@ def matrixproduct(a, b):
 
 def matrixdet(a):
     return np.linalg.det(a)
+
+
+def getones(n, k):
+    return np.eye(n, k=k)
