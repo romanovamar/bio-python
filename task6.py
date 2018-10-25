@@ -10,7 +10,7 @@ def getdiagonal(a):
 
 
 def cutarray(a, minvalue, maxvalue):
-    return a.clip(minvalue, maxvalue, out=a)
+    return a.clip(minvalue, maxvalue)
 
 
 def getmoments(a):
