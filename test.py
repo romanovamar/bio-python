@@ -18,7 +18,7 @@ def popcount(n):
     while n > 0:
         y = str(n % 2)
         x = y + x
-        n = int(n / 2)
+        n = int(n // 2)
     for i in x:
         if i == '1':
             t += 1
