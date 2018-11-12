@@ -1,5 +1,8 @@
-def valuesunion(dicts):
-    return (set(dicts.values()))
+def valuesunion(*dicts):
+    result = {}
+    for dictionary in dicts:
+        result.update(dictionary)
+    return set(result.values())
 
 
 def powers(n, m):
@@ -23,6 +26,10 @@ def popcount(n):
         if i == '1':
             t += 1
     return t
+
+
+def popcount(n):
+    return bin(n).count('1')
 
 
 def isIPv4(s):
