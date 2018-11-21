@@ -1,8 +1,9 @@
 def valuesunion(*dicts):
-    result = {}
-    for dictionary in dicts:
-        result.update(dictionary)
-    return set(result.values())
+    result = set()
+    for dict in dicts:
+        for i in dict.values():
+            result.add(i)
+    return result
 
 
 def powers(n, m):
@@ -43,3 +44,19 @@ def isIPv4(s):
         if i < 0 or i > 255:
             return False
     return True
+
+
+import itertools
+
+
+def pascals():
+    s = (1,)
+
+    for i in itertools.count(1):
+        line = []
+        line.append(1)
+        for i in range(len(s) - 1):
+            line.append(s[i] + s[i + 1])
+        line.append(1)
+        yield tuple(s)
+        s = line
