@@ -30,6 +30,7 @@ class LinkedQueue:
 
     def __init__(self):
         """ Initializes new queue """
+        self.emptynode = QueueNode(None, None)
         self.head = None
         self.tail = None
         self.length = 0
