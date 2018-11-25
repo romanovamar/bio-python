@@ -13,15 +13,16 @@ class QueueIterator:
     def __init__(self, node, emptynode):
         """ Initializes new Iterator """
         self.node = node
-        self.emptynode = emptynode
+        self.length = emptynode
 
     def __next__(self):
         """ Returns next element of queue: next(iter) """
-        if self.node == self.emptynode:
+        if self.length == 0:
             raise StopIteration
         else:
             elem = self.node.elem
             self.node = self.node.nextnode
+            self.length -= 1
             return elem
 
 
@@ -30,7 +31,6 @@ class LinkedQueue:
 
     def __init__(self):
         """ Initializes new queue """
-        self.emptynode = QueueNode(None, None)
         self.head = None
         self.tail = None
         self.length = 0
