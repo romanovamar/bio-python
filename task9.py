@@ -19,7 +19,6 @@ class FSItem(object):
                         raise FileSystemError if item does not exist
                         raise FileSystemError if item "newname" already exists '''
         try:
-            self.name = newname
             newname = os.path.join(self.cur_dir, newname)
             os.rename(self.path, newname)
         except:
