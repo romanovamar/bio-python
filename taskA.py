@@ -39,9 +39,9 @@ def main(args):
         elif cmd == 'cd':
             try:
                 if cmdtokens[1] == '..':
-                    main(os.chdir(os.path.split(os.getcwd())[0]))
+                    os.chdir(os.path.split(os.getcwd())[0])
                 else:
-                    main(os.chdir(cmdtokens[1]))
+                    os.chdir(cmdtokens[1])
             except FileNotFoundError:
                 print(f'Directory {cmdtokens[1]} not found')
 
