@@ -7,16 +7,6 @@ from task9 import *
 
 
 def main(args):
-    print('\n\n\33[92m'
-          '$$\       $$\                     $$\ \n'
-          '$$ |      \__|                    $$ |       \n'
-          '$$$$$$$\  $$\  $$$$$$\   $$$$$$$\ $$$$$$$\'  \n'
-          '$$  __$$\ $$ |$$  __$$\ $$  _____|$$  __$$\ \n'
-          '$$ |  $$ |$$ |$$ /  $$ |\$$$$$$\  $$ |  $$ | \n'
-          '$$ |  $$ |$$ |$$ |  $$ | \____$$\ $$ |  $$ | \n'
-          '$$$$$$$  |$$ |\$$$$$$  |$$$$$$$  |$$ |  $$ | \n'
-          '\_______/ \__| \______/ \_______/ \__|  \__| \n'
-          '\33[0m\n\n')
     cwd = Directory(os.getcwd())
     while True:
         cmdtokens = input('{path}$ '.format(path=cwd.path)).split()
@@ -39,9 +29,9 @@ def main(args):
         elif cmd == 'cd':
             try:
                 if cmdtokens[1] == '..':
-                    os.chdir(os.path.split(os.getcwd())[0])
+                    main(os.chdir(os.path.split(os.getcwd())[0]))
                 else:
-                    os.chdir(cmdtokens[1])
+                    main(os.chdir(cmdtokens[1]))
             except FileNotFoundError:
                 print(f'Directory {cmdtokens[1]} not found')
 
