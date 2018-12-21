@@ -41,7 +41,7 @@ def main(args):
             try:
                 for lines in file.getcontent():
                     print(lines)
-            except FileNotFoundError:
+            except FileSystemError:
                 print(f'File not found')
 
 
@@ -50,7 +50,7 @@ def main(args):
             try:
                 for lines in File.getcontent(file)[:10]:
                     print(lines)
-            except FileNotFoundError:
+            except FileSystemError:
                 print(f'File not found')
 
         elif cmd == 'tail':
@@ -58,7 +58,7 @@ def main(args):
                 file = File(cmdargs[0])
                 for lines in File.getcontent(file)[-10:]:
                     print(lines)
-            except FileNotFoundError:
+            except FileSystemError:
                 print(f'File not found')
 
         elif cmd == 'pwd':
