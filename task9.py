@@ -16,19 +16,17 @@ class FSItem(object):
 
     def rename(self, newname):
         ''' Renames current item
-                        raise FileSystemError if item does not exist
-                        raise FileSystemError if item "newname" already exists '''
+                raise FileSystemError if item does not exist
+                raise FileSystemError if item "newname" already exists '''
         try:
-            self.name = newname
-            newname = os.path.join(self.cur_dir, newname)
-            os.rename(self.path, newname)
-        except:
-            if self.name == newname:
-                raise FileSystemError(f'Name "{newname}" exist.')
-            elif FileNotFoundError:
-                raise FileSystemError(f'Path "{self.path}" not found.')
+            os.rename(os.path.join(self.cur_dir, self.name), os.path.join(self.cur_dir, newname))
+        except FileNotFoundError:
+            raise FileSystemError(f'Name "{newname}" exist.')
+        except FileExistsError:
+            raise FileSystemError(f'Path "{self.path}" not found.')
         else:
-            self.path = newname
+            self.name = newname
+            self.path = os.path.join(self.cur_dir, newname)
         return self
 
     def create(self):
