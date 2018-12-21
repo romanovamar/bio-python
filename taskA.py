@@ -72,10 +72,7 @@ def main(args):
 
 
         elif cmd == 'find':
-            name = str(cmdtokens[1])
-            for f in Directory(cwd.path).filesrecursive():
-                if name in f:
-                    print(f)
+            pass
 
 
         elif cmd == 'exit':
